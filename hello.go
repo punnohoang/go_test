@@ -1,11 +1,19 @@
 package main
+	const french = "French"
+	const spanish = "Spanish"
+	const englishHelloPrefix = "Hello, "
+	const spanishHelloPrefix = "Hola, "
+	const frenchHelloPrefix = "Bonjour, "
+	func Hello(name string, language string) string {
+		if name == "" {
+			name = "World"
+		}
 
-import "fmt"
-
-func Hello(name string) string{
-	return "Hello, " + name
-}
-
-func main(){
-	fmt.Println(Hello("world"))
-}
+		if language == spanish {
+			return spanishHelloPrefix + name
+		}
+		if language == french {
+			return frenchHelloPrefix + name
+		}
+		return englishHelloPrefix + name
+	}
